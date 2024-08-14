@@ -21,12 +21,12 @@ Welcome to the **Gurbani Shabads Website**! This is a simple web application tha
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/your-repository-name.git
+   git clone https://github.com/maaaaaauv/maaaaaauv.github.io
    ```
 
 2. **Navigate to the Project Directory**:
    ```bash
-   cd your-repository-name
+   cd maaaaaauv.github.io
    ```
 
 3. **Open the Project**:
