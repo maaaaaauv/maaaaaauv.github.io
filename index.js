@@ -14,6 +14,7 @@ function get_bani() {
 
         const gurmukhiDiv = document.getElementById('gurmikhishabd');
         const EnglishDrv = document.getElementById('englishtr');
+        const PunjabiDrv = document.getElementById('punjabi')
         
 
         document.getElementById('writer').textContent = writer;
@@ -32,6 +33,11 @@ function get_bani() {
             englishElement.classList.add('engver');
             englishElement.textContent = verseOBJ.translation.en.bdb;
             EnglishDrv.appendChild(englishElement);
+
+            const punjabiElement = document.createElement('div');
+            punjabiElement.classList.add('puver');
+            punjabiElement.textContent = verseOBJ.translation.pu.ss.unicode;
+            PunjabiDrv.appendChild(punjabiElement);
 
         
             //console.log(verseOBJ.verse.unicode);
