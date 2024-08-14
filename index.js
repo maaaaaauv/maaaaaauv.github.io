@@ -1,0 +1,62 @@
+// Set up the interval to run every 24 hours
+const MILLISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
+
+
+function get_bani() {
+    const randomNumber = Math.floor(Math.random() * 1430) + 1;
+    fetch("https://api.banidb.com/v2/shabads/" + randomNumber)
+      .then(response => response.json())
+      .then(data => {
+        const verse_data = data.verses;
+        
+        const raggUnicode = data.shabadInfo.raag.unicode;
+        const writer = data.shabadInfo.writer.english;
+        const ragg = data.shabadInfo.raag.english;
+
+        const gurmukhiDiv = document.getElementById('gurmikhishabd');
+        const EnglishDrv = document.getElementById('englishtr');
+        
+
+        document.getElementById('writer').textContent = writer;
+        document.getElementById('ragg').textContent = `Ragg: ${ragg}`;
+        document.getElementById('ang').textContent = `Ang: ${randomNumber}`
+
+        if (verse_data.length > 0) {
+        // Print Gurmukhi text of each verse
+        verse_data.forEach(verseOBJ => {
+            const verseElement = document.createElement('div');
+            verseElement.classList.add('verse')
+            verseElement.textContent = verseOBJ.verse.unicode;
+            gurmukhiDiv.appendChild(verseElement);
+
+            const englishElement = document.createElement('div');
+            englishElement.classList.add('engver');
+            englishElement.textContent = verseOBJ.translation.en.bdb;
+            EnglishDrv.appendChild(englishElement);
+
+        
+            //console.log(verseOBJ.verse.unicode);
+        
+      });
+
+      //console.log(data)
+
+    } else {
+      console.log("No verses available.");
+    }
+    
+        //console.log(verse_data)
+      })
+      .catch(error => console.error('Error:', error));
+
+}
+
+
+function startDailyTimer() {
+    get_bani();
+  
+    // Set interval to run the task every 24 hours
+    setInterval(get_bani, MILLISECONDS_IN_A_DAY);
+}
+
+startDailyTimer();
