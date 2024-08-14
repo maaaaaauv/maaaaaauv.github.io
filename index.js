@@ -3,13 +3,12 @@ const MILLISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
 
 
 function get_bani() {
-    const randomNumber = Math.floor(Math.random() * 1430) + 1;
+    const randomNumber = Math.floor(Math.random() * 5540) + 1;
     fetch("https://api.banidb.com/v2/shabads/" + randomNumber)
       .then(response => response.json())
       .then(data => {
         const verse_data = data.verses;
-        
-        const raggUnicode = data.shabadInfo.raag.unicode;
+        const ang = data.shabadInfo.pageNo;        
         const writer = data.shabadInfo.writer.english;
         const ragg = data.shabadInfo.raag.english;
 
@@ -19,7 +18,7 @@ function get_bani() {
 
         document.getElementById('writer').textContent = writer;
         document.getElementById('ragg').textContent = `Ragg: ${ragg}`;
-        document.getElementById('ang').textContent = `Ang: ${randomNumber}`
+        document.getElementById('ang').textContent = `Ang: ${ang}`
 
         if (verse_data.length > 0) {
         // Print Gurmukhi text of each verse

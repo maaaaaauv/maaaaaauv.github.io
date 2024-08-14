@@ -14,6 +14,7 @@ body {
     align-items: center;     /* Center items horizontally */         /* Full viewport height */
     text-align: center;      /* Center text horizontally */
   }
+
   
   .info h1, .info h2, .info h3 {
     margin: 0;               /* Remove default margins */
