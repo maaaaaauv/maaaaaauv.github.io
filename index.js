@@ -1,6 +1,10 @@
 // Set up the interval to run every 24 hours
 const MILLISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
 
+if (!navigator.userAgent.includes("Chrome")) {
+  alert("This Website Has some Issues on Firefox please use a Chrome based Browser")
+}
+
 
 function get_bani() {
     const randomNumber = Math.floor(Math.random() * 5540) + 1;
