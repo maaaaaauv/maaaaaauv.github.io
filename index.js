@@ -57,11 +57,30 @@ function get_bani() {
 }
 
 
-function startDailyTimer() {
-    get_bani();
-  
-    // Set interval to run the task every 24 hours
-    setInterval(get_bani, MILLISECONDS_IN_A_DAY);
+function removeElementsByClass(className) { //Thank you Chatgpt
+  const elements = document.querySelectorAll(`.${className}`);
+  elements.forEach(element => {
+      element.remove();
+  });
 }
 
+
+function refresh() {
+  removeElementsByClass('verse');
+  removeElementsByClass('engver');
+  removeElementsByClass('puver');
+
+  get_bani();
+
+}
+
+function startDailyTimer() {
+  get_bani();
+
+  // Set interval to run the task every 24 hours
+  setInterval(get_bani, MILLISECONDS_IN_A_DAY);
+}
+
+
 startDailyTimer();
+
