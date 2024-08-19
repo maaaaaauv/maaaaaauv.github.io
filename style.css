@@ -96,3 +96,10 @@ a {
   cursor: pointer;
   color: blue;
 }
+
+@media (max-width: 600px) {
+  .btn {
+    padding: 14px 28px; /* Adjust padding for smaller screens */
+    font-size: 18px; /* Larger font size for better readability */
+  }
+}
