@@ -16,6 +16,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-position: center center; /* Center the image both horizontally and vertically */
+  background-attachment: fixed; /* Make the background image fixed during scrolling */
   color: var(--text-color);
 }
 
@@ -40,7 +42,6 @@ body {
 
 .index {
   margin: 20px;
-  text-align: center;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
@@ -88,4 +89,10 @@ body {
   transition: 0.7s;
   background-color: transparent;
   color: var(--primary-color);
+}
+
+a {
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue;
 }
