@@ -1,3 +1,9 @@
 .guru {
     font-weight: bold;
 }
+
+
+
+  ul {
+    list-style: decimal;
+  }
